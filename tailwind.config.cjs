@@ -12,6 +12,9 @@ module.exports = {
         header: ["Mont-Heavy"],
         body: ["Bebas"],
       },
+      boxShadow: {
+        header: "0px 5px 8px rgba(0,0,0,0.03)",
+      },
     },
   },
   plugins: [],
