@@ -3,6 +3,9 @@ import "../fonts.css";
 import TheHeader from "../components/TheHeader.astro";
 import ThriveLanding from "../components/ThriveLanding.astro";
 import PreviousWork from "../components/PreviousWork.astro";
+import ProvidedServices from "../components/ProvidedServices.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <html lang="en">
@@ -11,11 +14,14 @@ import PreviousWork from "../components/PreviousWork.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Thrive Media Solutions</title>
   </head>
   <body class="bg-background font-body">
     <TheHeader />
     <ThriveLanding />
     <PreviousWork />
+    <ProvidedServices />
+    <About />
+    <Contact />
   </body>
 </html>

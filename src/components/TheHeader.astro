@@ -2,7 +2,7 @@
 ---
 
 <header
-  class="w-full bg-background fixed top-0 left-0 right-0 z-50 shadow-header transition-all duration-500 ease-in"
+  class="w-full bg-background fixed top-0 left-0 right-0 z-50 shadow-header transition-all duration-500 ease-in px-4"
 >
   <div
     class="grid grid-cols-3 items-center mx-auto relative py-4 max-w-screen-2xl"
@@ -10,24 +10,25 @@
     <picture class="h-12 w-auto relative">
       <img src="/images/thrive-logo.png" class="max-h-full w-auto object-cover" />
     </picture>
-    <nav class="justify-self-center">
+    <nav class="justify-self-center hidden md:block">
       <ul class="flex flex-row justify-evenly items-center space-x-6">
-        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wide text-base">Home</a></li>
-        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wide text-base">Services</a></li>
-        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wide text-base">About</a></li>
-        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wide text-base">Projects</a></li>
+        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wide text-base" href="#">Home</a></li>
+        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wide text-base" href="#services">Services</a></li>
+        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wide text-base" href="#about">About</a></li>
+        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wide text-base" href="#prevwork">Portfolio</a></li>
         <li>
           <a
             class="rounded-full border-primary border border-solid px-4 py-1.5 font-normal text-primary hover:text-background hover:bg-primary transition-colors duration-300 ease-in cursor-pointer"
+            href="#contact"
           >
             Contact
           </a>
         </li>
       </ul>
     </nav>
-    <ul class="justify-self-end flex flex-row space-x-3">
-        <li><a class="cursor-pointer"><img src="/images/behance-logo.webp" class="max-h-7 rounded-full aspect-square" /></a></li>
-        <li><a class="cursor-pointer"><img src="/images/vimeo-logo.webp" class="max-h-7 rounded-full aspect-square" /></a></li>
+    <ul class="justify-self-end flex-row space-x-3 hidden md:flex">
+        <li><a class="cursor-pointer" href="https://www.behance.net/theoschneidereit"><img src="/images/behance-logo.webp" class="max-h-7 rounded-full aspect-square" /></a></li>
+        <li><a class="cursor-pointer" href="https://vimeo.com/thrivemediasolutions"><img src="/images/vimeo-logo.webp" class="max-h-7 rounded-full aspect-square" /></a></li>
     </ul>
   </div>
 </header>
