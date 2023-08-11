@@ -1,0 +1,12 @@
+---
+import ClipSlider from "./ClipSlider.vue";
+import Heading from "./Heading.astro";
+---
+
+<section class="my-24 text-center">
+  <Heading>
+    <span slot="subtitle">Portfolio</span>
+    Previous <span class="text-primary">Work</span>
+  </Heading>
+  <ClipSlider client:only="vue" />
+</section>

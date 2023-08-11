@@ -1,23 +1,24 @@
 <template>
   <div class="max-w-4xl aspect-video mx-auto">
     <div ref="clipContainer" class="keen-slider h-full w-full">
-      <a @click="slider.prev()"
-        class="cursor-pointer text-xl absolute top-1/2 left-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg">
+      <a @click="slider.prev()" :class="{
+        'cursor-pointer text-xl absolute top-1/2 left-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg': true,
+        '': rel === 0,
+        '': rel > 0
+      }">
         <Icon icon="fa6-solid:chevron-left" />
       </a>
-      <a @click="slider.next()"
-        class="cursor-pointer text-xl absolute top-1/2 right-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg">
+      <a @click="slider.next()" :class="{
+        'cursor-pointer text-xl absolute top-1/2 right-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg': true,
+        '': rel === (slides?.length - 1 ?? 0),
+        '': rel < (slides?.length - 1 ?? 0)
+      }">
         <Icon icon="fa6-solid:chevron-right" />
       </a>
       <div class="keen-slider__slide" v-for="video in videos">
         <VimeoPlayer :src="video.src" :title="video.title" />
         <p>{{ video.description }}</p>
       </div>
-      <div class="keen-slider__slide number-slide2">2</div>
-      <div class="keen-slider__slide number-slide3">3</div>
-      <div class="keen-slider__slide number-slide4">4</div>
-      <div class="keen-slider__slide number-slide5">5</div>
-      <div class="keen-slider__slide number-slide6">6</div>
     </div>
     <!-- <div ref="thumbContainer" class="keen-slider thumbnail">
       <div class="keen-slider__slide th-number-slide1">1</div>
@@ -81,32 +82,20 @@ import { computed, onMounted, ref, watch } from "vue";
 //   };
 // }
 
-function NavigationPlugin(slider) {
-  function updateClasses() {
-    var slide = slider.track.details.rel;
-    slide === 0
-      ? arrowLeft.classList.add("arrow--disabled")
-      : arrowLeft.classList.remove("arrow--disabled");
-    slide === slider.track.details.slides.length - 1
-      ? arrowRight.classList.add("arrow--disabled")
-      : arrowRight.classList.remove("arrow--disabled");
-    Array.from(dots.children).forEach(function (dot, idx) {
-      idx === slide
-        ? dot.classList.add("dot--active")
-        : dot.classList.remove("dot--active");
-    });
-  }
-}
-
 const videos = [
   {
     title: "Hermes Charity Run 2022",
     src: "https://player.vimeo.com/video/852333646?badge=0&autopause=0&player_id=0&app_id=58479",
     description: "Hermes Charity Run 2022 Video für SocialMedia",
   },
+  {
+    title: "Thomas Henry Reel",
+    src: "https://player.vimeo.com/video/853648866?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    description: "Unoffical Thomas Henry Reel"
+  }
 ];
 
-const [clipContainer, slider] = useKeenSlider({}, [NavigationPlugin])
+const [clipContainer, slider] = useKeenSlider()
 const slides = computed(() => slider.value?.track.details.slides)
 const rel = ref(0)
 
