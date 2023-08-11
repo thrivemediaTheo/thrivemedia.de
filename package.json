@@ -10,10 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/svelte": "^3.1.0",
     "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/vue": "^2.2.1",
     "astro": "^2.10.4",
-    "svelte": "^4.0.0",
-    "tailwindcss": "^3.0.24"
+    "keen-slider": "^6.8.6",
+    "tailwindcss": "^3.0.24",
+    "vue": "^3.2.30"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "keen-slider@6.8.6": "patches/keen-slider@6.8.6.patch"
+    }
+  },
+  "devDependencies": {
+    "@iconify/vue": "^4.1.1"
   }
 }

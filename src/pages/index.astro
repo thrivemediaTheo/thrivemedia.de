@@ -2,6 +2,7 @@
 import "../fonts.css";
 import TheHeader from "../components/TheHeader.astro";
 import ThriveLanding from "../components/ThriveLanding.astro";
+import ClipSlider from "../components/ClipSlider.vue";
 ---
 
 <html lang="en">
@@ -15,5 +16,6 @@ import ThriveLanding from "../components/ThriveLanding.astro";
   <body class="bg-background font-body">
     <TheHeader />
     <ThriveLanding />
+    <ClipSlider client:only="vue" />
   </body>
 </html>
