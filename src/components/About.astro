@@ -1,5 +1,7 @@
 ---
+import BorderedPicture from "./BorderedPicture.astro";
 import Heading from "./Heading.astro";
+import PrimaryButton from "./PrimaryButton.astro";
 ---
 
 <section id="about" class="text-center">
@@ -7,4 +9,32 @@ import Heading from "./Heading.astro";
     <span slot="subtitle">About</span>
     Meet our <span class="text-primary">team</span>
   </Heading>
+
+  <div class="grid grid-cols-2 gap-x-8 pt-12">
+    <article class="text-left">
+      <h3 class="font-header text-5xl text-text mb-5 leading-snug">
+        Helping businesses succeed through the power of video.
+      </h3>
+      <p class="text-[22px] text-text/80 leading-normal mb-11">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam sit
+        repellendus asperiores fugiat quasi ratione, necessitatibus sint rem!
+        Quae culpa delectus veniam neque quo vero atque fugit nobis placeat nam!
+      </p>
+      <PrimaryButton href="#contact">Send a Free Request</PrimaryButton>
+    </article>
+    <div class="relative w-full min-h-full">
+      <div
+        class="absolute top-[60%] left-[65%] -translate-x-1/2 -translate-y-1/2 bg-primary blur-[250px] h-[350px] aspect-square rounded-full"
+      >
+      </div>
+      <div class="absolute top-0 right-0 w-72">
+        <BorderedPicture dir="tl" src="/images/scater.jpg" />
+      </div>
+
+      <div class="absolute right-64 top-40 w-60">
+        <BorderedPicture dir="br" src="/images/camera-man.jpg" />
+      </div>
+      <div class="h-[520px]"></div>
+    </div>
+  </div>
 </section>

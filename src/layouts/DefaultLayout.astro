@@ -1,0 +1,25 @@
+---
+import "../fonts.css";
+import "../global.css";
+import TheHeader from "../components/TheHeader.astro";
+import TheFooter from "../components/TheFooter.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Thrive Media Solutions</title>
+  </head>
+  <body class="bg-background font-body">
+    <TheHeader />
+    <slot name="pre" />
+    <main class="mx-auto relative px-4 max-w-screen-xl flex flex-col space-y-24">
+      <slot />
+    </main>
+    <slot name="post" />
+    <TheFooter />
+  </body>
+</html>

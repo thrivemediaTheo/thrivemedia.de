@@ -14,3 +14,11 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Sans-Titre";
+  src: url("/fonts/Sans-Titre_Pro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

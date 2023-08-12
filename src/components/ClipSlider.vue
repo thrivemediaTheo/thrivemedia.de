@@ -2,18 +2,18 @@
   <div class="max-w-4xl aspect-video mx-auto">
     <div ref="clipContainer" class="keen-slider h-full w-full">
       <a @click="slider.prev()" :class="{
-        'cursor-pointer text-xl absolute top-1/2 left-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg': true,
+        'cursor-pointer text-2xl absolute top-1/2 left-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg': true,
         '': rel === 0,
         '': rel > 0
       }">
-        <Icon icon="fa6-solid:chevron-left" />
+        <Icon icon="jam:chevron-left" />
       </a>
       <a @click="slider.next()" :class="{
-        'cursor-pointer text-xl absolute top-1/2 right-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg': true,
+        'cursor-pointer text-2xl absolute top-1/2 right-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg': true,
         '': rel === (slides?.length - 1 ?? 0),
         '': rel < (slides?.length - 1 ?? 0)
       }">
-        <Icon icon="fa6-solid:chevron-right" />
+        <Icon icon="jam:chevron-right" />
       </a>
       <div class="keen-slider__slide" v-for="video in videos">
         <VimeoPlayer :src="video.src" :title="video.title" />
@@ -39,7 +39,6 @@
 
 <script setup>
 import "keen-slider/keen-slider.min.css";
-import "../slider.css";
 
 import VimeoPlayer from "./VimeoPlayer.vue";
 import { Icon } from "@iconify/vue"

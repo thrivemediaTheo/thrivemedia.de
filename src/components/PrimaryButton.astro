@@ -1,0 +1,14 @@
+---
+const { size, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={{
+    "rounded-full border-primary border-solid text-primary hover:text-background hover:bg-primary transition-colors duration-300 ease-in cursor-pointer": true,
+    "px-4 py-1.5 font-normal border": size === "sm",
+    "text-xl font-semibold px-6 py-3 border-2": !size,
+  }}
+>
+  <slot />
+</a>

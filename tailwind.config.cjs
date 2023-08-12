@@ -9,8 +9,9 @@ module.exports = {
         primary: "rgb(255, 213, 0)",
       },
       fontFamily: {
+        nav: ["Bebas"],
         header: ["Mont-Heavy"],
-        body: ["Bebas"],
+        body: ["Sans-Titre"],
       },
       boxShadow: {
         header: "0px 5px 8px rgba(0,0,0,0.03)",

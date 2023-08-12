@@ -1,0 +1,17 @@
+---
+const { dir, src } = Astro.props;
+---
+
+<div class="relative h-full w-full">
+  <div
+    class:list={{
+      "border-2 border-primary border-solid absolute h-full w-full rounded-xl": true,
+      "-top-3 -left-3": dir === "tl",
+      "top-3 left-3": dir === "br",
+    }}
+  >
+  </div>
+  <picture class="w-full relative mx-auto overflow-hidden drop-shadow-2xl">
+    <img class="w-full h-full object-contain rounded-xl" src={src} />
+  </picture>
+</div>
