@@ -7,6 +7,7 @@ module.exports = {
         background: "rgb(53, 53, 53)",
         text: "#edf0f1",
         primary: "rgb(255, 213, 0)",
+        secondary: "#2B2B2B"
       },
       fontFamily: {
         nav: ["Bebas"],

@@ -1,2 +1,28 @@
 ---
+import { Icon } from "astro-icon";
+const { title, description, icon, pos, border } = Astro.props;
 ---
+
+<!--
+   -left-3
+   -right-3
+ -->
+<div>
+  <div
+    class="bg-secondary rounded-xl text-left px-8 py-6 relative hover:scale-105 hover:drop-shadow-xl transition-all duration-500"
+    class:list={{
+      "": pos === "top",
+      "mt-16": pos === "mid",
+      "mt-32": pos === "bot",
+      "border-primary border-solid": border,
+      "border-t-4": border === "top",
+      "border-b-4": border === "bot",
+    }}
+  >
+    <Icon name={icon} class="text-primary aspect-square h-24 mx-auto my-12" />
+    <h3 class="text-text text-lg font-header mb-2 text-center tracking-wide">
+      {title}
+    </h3>
+    <p class="text-text/80 text-base font-body">{description}</p>
+  </div>
+</div>

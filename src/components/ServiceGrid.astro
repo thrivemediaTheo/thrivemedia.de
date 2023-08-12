@@ -1,0 +1,31 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+---
+
+<div class="grid grid-cols-3 gap-x-8 relative">
+  <ServiceCard
+    icon="jam:video-camera-vintage-f"
+    title="Videoproduction"
+    description="Wir bieten einen umfassenden Service, welcher Filmaufnahmen, professionellen Videoschnitt und ansprechendes SoundDesign vereint, um ihre Botschaft optimal zu inszenieren und ihre Zielgruppe nachhaltig zu erreichen."
+    pos="top"
+    border="top"
+  />
+  <ServiceCard
+    icon="jam:brush"
+    title="Graphicdesign"
+    description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere totam minima magni non deleniti tempore molestias amet, nostrum distinctio sint molestiae vel delectus ab quidem eligendi rem, aspernatur obcaecati corporis."
+    pos="mid"
+    border="bot"
+  />
+  <ServiceCard
+    icon="jam:camera-f"
+    title="Photography"
+    description="Wir bieten professionelle Fotografie, maßgeschneidert für Ihre Website oder ihre SocialMedia Plattformen. Wir helfen Ihnen dabei, Ihren Service optimal zu präsentieren und ihre Kunden mit ansprechenden Bildern zu überzeugen."
+    pos="bot"
+    border="top"
+  />
+  <div
+    class="absolute left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary blur-[200px] h-[300px] aspect-square -z-10"
+  >
+  </div>
+</div>
