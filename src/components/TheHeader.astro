@@ -1,5 +1,6 @@
 ---
 import PrimaryButton from "./PrimaryButton.astro";
+import { Icon } from "astro-icon";
 ---
 
 <header
@@ -25,8 +26,8 @@ import PrimaryButton from "./PrimaryButton.astro";
       </ul>
     </nav>
     <ul class="justify-self-end flex-row space-x-3 hidden md:flex">
-        <li><a class="cursor-pointer" href="https://www.behance.net/theoschneidereit"><img src="/images/behance-logo.webp" class="max-h-7 rounded-full aspect-square" /></a></li>
-        <li><a class="cursor-pointer" href="https://vimeo.com/thrivemediasolutions"><img src="/images/vimeo-logo.webp" class="max-h-7 rounded-full aspect-square" /></a></li>
+        <li><a class="cursor-pointer bg-primary rounded-full p-1 grid aspect-square" href="https://www.behance.net/theoschneidereit"><Icon name="jam:behance" class="h-6 aspect-square text-background" /></a></li>
+        <li><a class="cursor-pointer bg-primary rounded-full p-1 grid aspect-square" href="https://vimeo.com/thrivemediasolutions"><Icon name="jam:vimeo" class="h-6 aspect-square text-background" /></a></li>
     </ul>
   </div>
 </header>
