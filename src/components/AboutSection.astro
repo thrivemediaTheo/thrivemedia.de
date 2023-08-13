@@ -2,6 +2,9 @@
 import BorderedPicture from "./BorderedPicture.astro";
 import Heading from "./Heading.astro";
 import PrimaryButton from "./PrimaryButton.astro";
+
+import scater from "../assets/images/scater.jpg";
+import cameraMan from "../assets/images/camera-man.jpg";
 ---
 
 <section id="about" class="text-center">
@@ -30,18 +33,13 @@ import PrimaryButton from "./PrimaryButton.astro";
       >
       </div>
       <div class="absolute top-0 right-0 w-72">
-        <BorderedPicture
-          dir="tl"
-          src="/images/scater.jpg"
-          alt="Scater"
-          title="Portrait"
-        />
+        <BorderedPicture dir="tl" src={scater} alt="Scater" title="Portrait" />
       </div>
 
       <div class="absolute right-64 top-40 w-60">
         <BorderedPicture
           dir="br"
-          src="/images/camera-man.jpg"
+          src={cameraMan}
           alt="Me at work"
           title="Work Example"
         />

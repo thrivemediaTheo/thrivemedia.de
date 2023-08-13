@@ -1,4 +1,5 @@
 ---
+import { Picture } from "@astrojs/image/components";
 const { dir, src, title, alt } = Astro.props;
 ---
 
@@ -11,7 +12,12 @@ const { dir, src, title, alt } = Astro.props;
     }}
   >
   </div>
-  <picture class="w-full relative mx-auto overflow-hidden drop-shadow-2xl">
-    <img class="w-full h-full object-contain rounded-xl" src={src} alt={alt} title={title} />
-  </picture>
+  <Picture
+    class="w-full relative mx-auto overflow-hidden drop-shadow-2xl rounded-xl"
+    src={src}
+    alt={alt}
+    title={title}
+    widths={[200, 400, 800]}
+    sizes="(max-width: 800px) 100vw, 800px"
+  />
 </div>

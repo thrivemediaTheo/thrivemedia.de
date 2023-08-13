@@ -1,4 +1,6 @@
 ---
+import { Picture } from "@astrojs/image/components";
+import movingTrain from "../assets/images/train-movin-header.webp";
 ---
 
 <section class="relative">
@@ -14,9 +16,10 @@
       We make art.
     </span>
   </div>
-  <img
-    class="relative h-full min-h-[25vh] object-fill"
-    src="/images/train-movin-header.webp"
+  <Picture
+    src={movingTrain}
+    widths={[360, 480, 640, 720, 768, 810, 1080, 1140, 1366, 1920, 4118]}
+    sizes="100vw"
     alt="Moving Train"
     title="Moving Train Landing Header"
   />
