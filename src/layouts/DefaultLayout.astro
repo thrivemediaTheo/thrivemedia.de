@@ -13,10 +13,12 @@ import TheFooter from "../components/TheFooter.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Thrive Media Solutions</title>
   </head>
-  <body class="bg-background font-body">
+  <body class="bg-background font-body flex flex-col min-h-screen relative">
     <TheHeader />
     <slot name="pre" />
-    <main class="mx-auto relative px-4 max-w-screen-xl flex flex-col space-y-36">
+    <main
+      class="mx-auto relative px-4 max-w-screen-xl flex flex-col space-y-36 grow"
+    >
       <slot />
     </main>
     <slot name="post" />
