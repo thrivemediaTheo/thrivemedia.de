@@ -1,0 +1,31 @@
+---
+const { title } = Astro.props;
+const description = "We provide ...";
+const imageUrl = "https://thrivemedia.art/images/thrive-logo.webp";
+---
+
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+<!-- basic meta -->
+<meta name="description" content={description} />
+<meta name="keywords" content="thrivemedia, video, graphic, photo" />
+<meta name="canonical" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Timo Beckmann" />
+<meta name="publisher" content="Theo Schneidereit" />
+<!-- open graph (facebook) -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:site_name" content="Thrive Media Solutions" />
+<!-- twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<!-- <meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="" /> -->
