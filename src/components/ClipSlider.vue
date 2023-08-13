@@ -1,14 +1,14 @@
 <template>
   <div class="max-w-4xl aspect-video mx-auto">
     <div ref="clipContainer" class="keen-slider h-full w-full">
-      <button @click="slider.prev()" :class="{
+      <button aria-label="Slide left" @click="slider.prev()" :class="{
         'cursor-pointer text-2xl absolute top-1/2 left-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg': true,
         '': rel === 0,
         '': rel > 0
       }">
         <Icon icon="jam:chevron-left" />
       </button>
-      <button @click="slider.next()" :class="{
+      <button aria-label="Slide right" @click="slider.next()" :class="{
         'cursor-pointer text-2xl absolute top-1/2 right-5 -translate-y-1/2 z-20 w-10 aspect-square rounded-full bg-black/20 grid place-items-center transition-colors text-text hover:text-primary backdrop-blur-lg': true,
         '': rel === (slides?.length - 1 ?? 0),
         '': rel < (slides?.length - 1 ?? 0)
@@ -29,7 +29,7 @@
       <div class="keen-slider__slide th-number-slide6">6</div>
     </div> -->
     <div ref="dots" v-if="slides" class="flex flex-row justify-center items-center my-4">
-      <button v-for="(_, i) in slides" @click="slider.moveToIdx(i)" :class="{
+      <button v-for="(_, i) in slides" :aria-label="`Show slide ${i}`" @click="slider.moveToIdx(i)" :class="{
         'dot': true,
         'dot--active': rel === i
       }"></button>
