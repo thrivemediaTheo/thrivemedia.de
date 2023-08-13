@@ -1,4 +1,5 @@
 ---
+import ContactInfo from "./ContactInfo.astro";
 import Heading from "./Heading.astro";
 ---
 
@@ -7,4 +8,16 @@ import Heading from "./Heading.astro";
     <span slot="subtitle">Contact</span>
     Get in touch <span class="text-primary">with us</span>
   </Heading>
+  <div class="grid grid-cols-2 gap-x-32 pt-12">
+    <article class="text-left">
+      <h3 class="font-header text-5xl text-text mb-5 leading-snug">
+        Let's talk about everything!
+      </h3>
+      <p class="text-[22px] text-text/80 leading-normal mb-11">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam sit
+        repellendus asperiores fugiat quasi ratione, necessitatibus sint rem!
+      </p>
+    </article>
+    <ContactInfo />
+  </div>
 </section>
