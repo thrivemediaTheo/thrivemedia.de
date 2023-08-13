@@ -22,25 +22,43 @@ import { Icon } from "astro-icon";
         <li>
           <a
             class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base"
-            href="/#">Home</a>
+            href="/#"
+            title="Home"
+          >
+            Home
+          </a>
         </li>
         <li>
           <a
             class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base"
-            href="/#services">Services</a>
+            href="/#services"
+            title="Services"
+          >
+            Services
+          </a>
         </li>
         <li>
           <a
             class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base"
-            href="/#about">About</a>
+            href="/#about"
+            title="About"
+          >
+            About
+          </a>
         </li>
         <li>
           <a
             class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base"
-            href="/#prevwork">Portfolio</a>
+            href="/#prevwork"
+            title="Portfolio"
+          >
+            Portfolio
+          </a>
         </li>
         <li class="tracking-wider">
-          <PrimaryButton size="sm" href="/#contact">Contact</PrimaryButton>
+          <PrimaryButton size="sm" href="/#contact" title="Contact">
+            Contact
+          </PrimaryButton>
         </li>
       </ul>
     </nav>
@@ -49,19 +67,19 @@ import { Icon } from "astro-icon";
         <a
           class="cursor-pointer bg-primary rounded-full p-1 grid aspect-square"
           href="https://www.behance.net/theoschneidereit"
-          ><Icon
-            name="jam:behance"
-            class="h-6 aspect-square text-background"
-          /></a>
+          title="Behance"
+        >
+          <Icon name="jam:behance" class="h-6 aspect-square text-background" />
+        </a>
       </li>
       <li>
         <a
           class="cursor-pointer bg-primary rounded-full p-1 grid aspect-square"
           href="https://vimeo.com/thrivemediasolutions"
-          ><Icon
-            name="jam:vimeo"
-            class="h-6 aspect-square text-background"
-          /></a>
+          title="Vimeo"
+        >
+          <Icon name="jam:vimeo" class="h-6 aspect-square text-background" />
+        </a>
       </li>
     </ul>
   </div>

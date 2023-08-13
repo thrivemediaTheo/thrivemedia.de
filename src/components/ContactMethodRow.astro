@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-const { icon, label, value, href } = Astro.props;
+const { icon, label, value, href, hreftitle } = Astro.props;
 ---
 
 <div class="flex flex-col space-y-3">
@@ -13,6 +13,7 @@ const { icon, label, value, href } = Astro.props;
   <a
     class="text-2xl text-text hover:text-primary transition-colors duration-300"
     href={href}
+    title={hreftitle}
   >
     {value}
   </a>
