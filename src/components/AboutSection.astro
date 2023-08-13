@@ -33,15 +33,27 @@ import cameraMan from "../assets/images/camera-man.jpg";
       >
       </div>
       <div class="absolute top-0 right-0 w-72">
-        <BorderedPicture dir="tl" src={scater} alt="Scater" title="Portrait" />
+        <BorderedPicture
+          dir="tl"
+          src={scater}
+          alt="Scater"
+          title="Portrait"
+          widths={[200, 400, 800, 4176]}
+          width="4176"
+          height="6264"
+          sizes="(max-width: 800px) 100vw, 800px"
+        />
       </div>
-
       <div class="absolute right-64 top-40 w-60">
         <BorderedPicture
           dir="br"
           src={cameraMan}
           alt="Me at work"
           title="Work Example"
+          widths={[200, 400, 800, 1861]}
+          width="1861"
+          height="2792"
+          sizes="(max-width: 800px) 100vw, 800px"
         />
       </div>
       <div class="h-[520px]"></div>
