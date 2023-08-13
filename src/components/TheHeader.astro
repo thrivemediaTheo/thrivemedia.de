@@ -10,24 +10,59 @@ import { Icon } from "astro-icon";
     class="grid grid-cols-3 items-center mx-auto relative py-4 max-w-screen-2xl"
   >
     <picture class="h-12 w-auto relative">
-      <img src="/images/thrive-logo.png" class="max-h-full w-auto object-cover" />
+      <img
+        src="/images/thrive-logo.png"
+        class="max-h-full w-auto object-cover"
+        alt="Thrive Media Solutions"
+        title="Thrive Media Solutions Logo"
+      />
     </picture>
     <nav class="justify-self-center hidden md:block">
       <ul class="flex flex-row justify-evenly items-center space-x-6">
-        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base" href="/#">Home</a></li>
-        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base" href="/#services">Services</a></li>
-        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base" href="/#about">About</a></li>
-        <li><a class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base" href="/#prevwork">Portfolio</a></li>
+        <li>
+          <a
+            class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base"
+            href="/#">Home</a>
+        </li>
+        <li>
+          <a
+            class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base"
+            href="/#services">Services</a>
+        </li>
+        <li>
+          <a
+            class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base"
+            href="/#about">About</a>
+        </li>
+        <li>
+          <a
+            class="cursor-pointer text-text hover:text-primary capitalize transition-colors duration-300 ease-in tracking-wider text-base"
+            href="/#prevwork">Portfolio</a>
+        </li>
         <li class="tracking-wider">
-          <PrimaryButton size="sm" href="/#contact">
-            Contact
-          </PrimaryButton>
+          <PrimaryButton size="sm" href="/#contact">Contact</PrimaryButton>
         </li>
       </ul>
     </nav>
     <ul class="justify-self-end flex-row space-x-3 hidden md:flex">
-        <li><a class="cursor-pointer bg-primary rounded-full p-1 grid aspect-square" href="https://www.behance.net/theoschneidereit"><Icon name="jam:behance" class="h-6 aspect-square text-background" /></a></li>
-        <li><a class="cursor-pointer bg-primary rounded-full p-1 grid aspect-square" href="https://vimeo.com/thrivemediasolutions"><Icon name="jam:vimeo" class="h-6 aspect-square text-background" /></a></li>
+      <li>
+        <a
+          class="cursor-pointer bg-primary rounded-full p-1 grid aspect-square"
+          href="https://www.behance.net/theoschneidereit"
+          ><Icon
+            name="jam:behance"
+            class="h-6 aspect-square text-background"
+          /></a>
+      </li>
+      <li>
+        <a
+          class="cursor-pointer bg-primary rounded-full p-1 grid aspect-square"
+          href="https://vimeo.com/thrivemediasolutions"
+          ><Icon
+            name="jam:vimeo"
+            class="h-6 aspect-square text-background"
+          /></a>
+      </li>
     </ul>
   </div>
 </header>

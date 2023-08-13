@@ -1,5 +1,5 @@
 ---
-const { dir, src } = Astro.props;
+const { dir, src, title, alt } = Astro.props;
 ---
 
 <div class="relative h-full w-full">
@@ -12,6 +12,6 @@ const { dir, src } = Astro.props;
   >
   </div>
   <picture class="w-full relative mx-auto overflow-hidden drop-shadow-2xl">
-    <img class="w-full h-full object-contain rounded-xl" src={src} />
+    <img class="w-full h-full object-contain rounded-xl" src={src} alt={alt} title={title} />
   </picture>
 </div>
