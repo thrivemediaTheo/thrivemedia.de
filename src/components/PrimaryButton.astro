@@ -5,6 +5,7 @@ const { size, href, title } = Astro.props;
 <a
   href={href}
   title={title}
+  rel="prefetch-intent"
   class:list={{
     "rounded-full border-primary border-solid text-primary hover:text-background hover:bg-primary transition-colors duration-300 ease-in cursor-pointer": true,
     "px-4 py-1.5 font-normal border": size === "sm",
