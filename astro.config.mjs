@@ -1,10 +1,9 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import vue from "@astrojs/vue";
 import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
-
+import react from "@astrojs/react";
 const site = "https://thrivemedia.art";
 const sitemapx = {
   index: {
@@ -22,7 +21,6 @@ export default defineConfig({
   site,
   integrations: [
     tailwind(),
-    vue(),
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
@@ -37,5 +35,6 @@ export default defineConfig({
       },
     }),
     prefetch(),
+    react(),
   ],
 });

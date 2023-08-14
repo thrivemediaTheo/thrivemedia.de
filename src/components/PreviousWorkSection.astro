@@ -1,6 +1,6 @@
 ---
-import ClipSlider from "./ClipSlider.vue";
 import Heading from "./Heading.astro";
+import Gallery from "./Gallery";
 ---
 
 <section class="text-center" id="prevwork">
@@ -8,5 +8,6 @@ import Heading from "./Heading.astro";
     <span slot="subtitle">Portfolio</span>
     Previous <span class="text-primary">Work</span>
   </Heading>
-  <ClipSlider client:only="vue" />
+  <div class="pt-12"></div>
+  <Gallery client:only />
 </section>
