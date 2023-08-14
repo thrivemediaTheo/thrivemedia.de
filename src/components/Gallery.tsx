@@ -31,6 +31,9 @@ export default function Gallery(props) {
   }, [hovering]);
 
   async function onMouseEnter(i: number) {
+    // abort if section is already hovered
+    if (i === hovering) return;
+
     // disable previous player
     if (playing) {
       playing = false;
@@ -64,8 +67,8 @@ export default function Gallery(props) {
         <div
           key={i}
           className={`${
-            i === hovering ? "flex-[6]" : "flex-[1]"
-          } transition-[flex] duration-500 h-full overflow-hidden rounded-xl bg-red-500`}
+            i === hovering ? "flex-[12.5]" : "flex-[1]"
+          } transition-[flex] duration-500 h-full overflow-hidden rounded-xl`}
           onMouseEnter={() => onMouseEnter(i)}
           onMouseLeave={() => onMouseLeave()}
         >

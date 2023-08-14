@@ -8,12 +8,19 @@ import {
   MediaPoster,
 } from "@vidstack/react";
 
-export default function VideoPlayer({ onPlay, onPause }) {
+export default function VideoPlayer({
+  onPlay,
+  onPause,
+  src = "https://content.thrivemedia.art/TürküBarNoSoundDEMO.mp4",
+  title = "Thrive Media Video",
+  aspectRatio = 16 / 9,
+}) {
   return (
     <MediaPlayer
-      title="Sprite Fight"
-      src="https://content.thrivemedia.art/TürküBarNoSoundDEMO.mp4"
-      aspectRatio={16 / 9}
+      autoplay
+      title={title}
+      src={src}
+      aspectRatio={aspectRatio}
       crossorigin=""
       onPlay={onPlay}
       onPause={onPause}
