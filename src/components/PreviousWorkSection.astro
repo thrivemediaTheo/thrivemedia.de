@@ -9,7 +9,11 @@ import Gallery from "./Gallery";
     Previous <span class="text-primary">Work</span>
   </Heading>
   <div class="pt-12"></div>
-  <div class="h-[35vmin]">
+  <div class="h-[35vmin] relative">
     <Gallery client:only />
+    <div
+      class="absolute top-[60%] left-[65%] -translate-x-1/2 -translate-y-1/2 bg-primary blur-[250px] h-[250px] aspect-square rounded-full -z-10"
+    >
+    </div>
   </div>
 </section>
