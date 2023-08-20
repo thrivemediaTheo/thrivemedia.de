@@ -17,24 +17,28 @@ const videos = [
     src: "https://content.thrivemedia.art/HermesCharityRun_DEMO.mp4",
     thumbnail: hermsCharityRunThumb,
     aspectRatio: 16 / 9,
+    muted: false,
   },
   {
     title: "Bikepark Piesberg",
     src: "https://content.thrivemedia.art/Piesberg_DEMO.mp4",
     thumbnail: piesbergThumb,
     aspectRatio: 16 / 9,
+    muted: false,
   },
   {
     title: "Thomas Henry Reel",
     src: "https://content.thrivemedia.art/ThomasHenry_DEMO.mp4",
     thumbnail: thomasHenryThumb,
     aspectRatio: 9 / 16,
+    muted: false,
   },
   {
     title: "Türkü Bar",
     src: "https://content.thrivemedia.art/TuerkueBarNoSoundDEMO.mp4",
     thumbnail: tuerkueBarThumb,
     aspectRatio: 16 / 9,
+    muted: true,
   },
 ];
 
@@ -161,7 +165,7 @@ export default function Gallery(props) {
       className="flex flex-row items-center justify-center gap-2 h-[35vmin]"
       ref={gallery}
     >
-      {videos.map(({ thumbnail, src, title, aspectRatio }, i) => (
+      {videos.map(({ thumbnail, src, title, aspectRatio, muted }, i) => (
         <div
           key={i}
           className="transition-[flex] duration-500 h-full overflow-hidden rounded-xl"
@@ -180,6 +184,7 @@ export default function Gallery(props) {
               src={src}
               title={title}
               aspectRatio={aspectRatio}
+              muted={muted}
             />
           ) : (
             // <img className="object-cover h-full w-full" src={src} />

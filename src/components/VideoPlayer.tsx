@@ -14,6 +14,7 @@ export default function VideoPlayer({
   src = "https://content.thrivemedia.art/TürküBarNoSoundDEMO.mp4",
   title = "Thrive Media Video",
   aspectRatio = 16 / 9,
+  muted = false,
 }) {
   return (
     <MediaPlayer
@@ -24,6 +25,7 @@ export default function VideoPlayer({
       crossorigin=""
       onPlay={onPlay}
       onPause={onPause}
+      muted={muted}
     >
       <MediaOutlet>
         <MediaPoster alt="Girl walks into sprite gnomes around her friend on a campfire in danger!" />
