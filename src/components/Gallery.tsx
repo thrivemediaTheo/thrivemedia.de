@@ -97,7 +97,63 @@ export default function Gallery(props) {
   function calculateFlexForRatio(ar: number) {
     if (!gallery) return 3;
 
-    return flexAspectRatio[ar];
+    const videoCount = videos.length;
+    const containerWidth = gallery.current.clientWidth,
+      containerHeight = gallery.current.clientHeight;
+    const gap = 8;
+
+    const containerGapWidth = videoCount * gap - gap;
+    const availableWidth = containerWidth - containerGapWidth;
+    const containerGapWidthP = containerGapWidth / containerWidth;
+
+    console.table({
+      containerGapWidth,
+      containerGapWidthP,
+      availableWidth,
+    });
+
+    // // baseGrowthFactor = 4 means every of the 4 videos has flex-1
+    // // if one has 2 its 5
+    // const baseGrowthFactor = videoCount; // 4
+    // const widthFactor = 100 / baseGrowthFactor;
+    // // expectedWidth is accurate for flex-1 (px)
+    // const expectedWidth = availableWidth * (widthFactor / 100);
+
+    // // wenn man ein von 4 video auf flex-2 setzt, bekommt es 40% der breite (3 * flex 1 + 1 * flex-2 = 5 (total flexes) -> 100 / 5 = 20 (base width)) und der rest 20%
+    // // 3 * flex-1 + 1 * flex-x = y | y equals total flexes
+    // // 100 / y = a | a equals size of el in percent (to parent)
+
+    // console.table({ baseGrowthFactor, widthFactor, expectedWidth });
+
+    // what to do now:
+    // calc the expected px width for the given ar and height of the container
+    const growWidthPx = containerHeight * ar;
+
+    // calc the expected % width of the available width
+    const growWidthP = growWidthPx / availableWidth,
+      growWidthFactor = growWidthP * 100;
+
+    console.table({
+      growWidthPx,
+      growWidthP,
+      growWidthFactor,
+    });
+
+    // bsp: insg 4, für 1 werden ~75% gebraucht
+    // 3 * flex-1 + 1 * flex-x = y
+    // 100 / y = z
+    // z ist die breite der anderen elemente in %
+    // 25% sind für andere verfügbar, also müssen gleich aufgeteilt werden
+    // 25 / 3
+
+    const availableWidthForOthers = 100 - growWidthFactor - containerGapWidthP;
+    const widthForEachOfOthers = availableWidthForOthers / (videoCount - 1);
+    const totalFlexCount = 100 / widthForEachOfOthers;
+    const targetFlex = totalFlexCount - videoCount + 1;
+
+    console.table({ totalFlexCount, widthForEachOfOthers, targetFlex });
+
+    return targetFlex;
   }
 
   return (
@@ -110,7 +166,7 @@ export default function Gallery(props) {
           key={i}
           className="transition-[flex] duration-500 h-full overflow-hidden rounded-xl"
           style={{
-            // flex: i === hovering ? calculateFlexForRatio(aspectRatio) : 1,
+            flex: i === hovering ? calculateFlexForRatio(aspectRatio) : 1,
             // width: i === hovering ? `${gallery.current.clientWidth / videos.length - 8 * videos.length}px` : "auto",
             // aspectRatio: i === hovering ? "16 / 9" : "auto",
           }}
