@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import VideoPlayer from "./VideoPlayer";
 
 import hermsCharityRunThumb from "../assets/images/thumbnails/HermesThumb.png";
-import piesbergThumb from "../assets/images/thumbnails/PiesbergThumb.png";
+import piesbergThumb from "../assets/images/thumbnails/PiesbergThumb.webp";
 import thomasHenryThumb from "../assets/images/thumbnails/ThomasHenryThumb.png";
 import tuerkueBarThumb from "../assets/images/thumbnails/TuerkueBarThumb.png";
 
