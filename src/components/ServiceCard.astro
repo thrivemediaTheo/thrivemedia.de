@@ -8,8 +8,8 @@ const { title, description, icon, pos, border } = Astro.props;
     class="bg-secondary rounded-xl text-left px-8 py-6 relative hover:scale-105 hover:drop-shadow-xl transition-all duration-500"
     class:list={{
       "": pos === "top",
-      "mt-16": pos === "mid",
-      "mt-32": pos === "bot",
+      "lg:mt-16": pos === "mid",
+      "lg:mt-32": pos === "bot",
       "border-primary border-solid": border,
       "border-t-4": border === "top",
       "border-b-4": border === "bot",
