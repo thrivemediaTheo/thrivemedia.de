@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import movingTrain from "../assets/images/train-movin-header.webp";
 ---
 
@@ -16,14 +16,12 @@ import movingTrain from "../assets/images/train-movin-header.webp";
       We make art.
     </span>
   </div>
-  <Picture
+  <Image
     src={movingTrain}
-    widths={[360, 480, 640, 720, 768, 810, 1080, 1140, 1366, 1920, 4118]}
-    sizes="100vw"
     alt="Moving Train"
     title="Moving Train Landing Header"
     loading="eager"
-    width={4118}
-    height={1292}
+    width={movingTrain.width}
+    height={movingTrain.height}
   />
 </section>

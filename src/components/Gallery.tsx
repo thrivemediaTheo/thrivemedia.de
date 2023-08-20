@@ -1,10 +1,49 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import VideoPlayer from "./VideoPlayer";
+
+import hermsCharityRunThumb from "../assets/images/thumbnails/HermesThumb.png";
+import piesbergThumb from "../assets/images/thumbnails/PiesbergThumb.png";
+import thomasHenryThumb from "../assets/images/thumbnails/ThomasHenryThumb.png";
+import tuerkueBarThumb from "../assets/images/thumbnails/TuerkueBarThumb.png";
+
+const flexAspectRatio = {
+  [16 / 9]: 12.75,
+  [9 / 16]: 2,
+};
+
+const videos = [
+  {
+    title: "Hermes Charity Run",
+    src: "https://content.thrivemedia.art/HermesCharityRun_DEMO.mp4",
+    thumbnail: hermsCharityRunThumb,
+    aspectRatio: 16 / 9,
+  },
+  {
+    title: "Bikepark Piesberg",
+    src: "https://content.thrivemedia.art/Piesberg_DEMO.mp4",
+    thumbnail: piesbergThumb,
+    aspectRatio: 16 / 9,
+  },
+  {
+    title: "Thomas Henry Reel",
+    src: "https://content.thrivemedia.art/ThomasHenry_DEMO.mp4",
+    thumbnail: thomasHenryThumb,
+    aspectRatio: 9 / 16,
+  },
+  {
+    title: "Türkü Bar",
+    src: "https://content.thrivemedia.art/TuerkueBarNoSoundDEMO.mp4",
+    thumbnail: tuerkueBarThumb,
+    aspectRatio: 16 / 9,
+  },
+];
 
 export default function Gallery(props) {
   const [hovering, setHovering] = useState(-1);
   const [playerShowing, setPlayerShowing] = useState(-1);
   let playing = false;
+
+  const gallery = useRef<HTMLDivElement | null>(null);
 
   //   const transitionDone = () =>
   //     transitionPending
@@ -12,12 +51,6 @@ export default function Gallery(props) {
   //           setInterval(() => (!transitionPending && resolve(), 100))
   //         )
   //       : Promise.resolve();
-
-  const images = [];
-  for (let i = 0; i < 5; i++)
-    images.push(
-      `https://source.unsplash.com/random/600x600?bear,seed=${i * 100}`
-    );
 
   useEffect(() => {
     // dont show player if nothing is hovered
@@ -61,21 +94,46 @@ export default function Gallery(props) {
     playing = false;
   }
 
+  function calculateFlexForRatio(ar: number) {
+    if (!gallery) return 3;
+
+    return flexAspectRatio[ar];
+  }
+
   return (
-    <div className="flex flex-row items-center justify-center gap-2 h-[35vmin]">
-      {images.map((src, i) => (
+    <div
+      className="flex flex-row items-center justify-center gap-2 h-[35vmin]"
+      ref={gallery}
+    >
+      {videos.map(({ thumbnail, src, title, aspectRatio }, i) => (
         <div
           key={i}
-          className={`${
-            i === hovering ? "flex-[12.5]" : "flex-[1]"
-          } transition-[flex] duration-500 h-full overflow-hidden rounded-xl`}
+          className="transition-[flex] duration-500 h-full overflow-hidden rounded-xl"
+          style={{
+            // flex: i === hovering ? calculateFlexForRatio(aspectRatio) : 1,
+            // width: i === hovering ? `${gallery.current.clientWidth / videos.length - 8 * videos.length}px` : "auto",
+            // aspectRatio: i === hovering ? "16 / 9" : "auto",
+          }}
           onMouseEnter={() => onMouseEnter(i)}
           onMouseLeave={() => onMouseLeave()}
         >
           {i === playerShowing ? (
-            <VideoPlayer onPlay={() => onPlay(i)} onPause={() => onPause(i)} />
+            <VideoPlayer
+              onPlay={() => onPlay(i)}
+              onPause={() => onPause(i)}
+              src={src}
+              title={title}
+              aspectRatio={aspectRatio}
+            />
           ) : (
-            <img className="object-cover h-full w-full" src={src} />
+            // <img className="object-cover h-full w-full" src={src} />
+            <img
+              className="object-cover h-full w-full"
+              src={thumbnail.src}
+              width={thumbnail.width}
+              height={thumbnail.height}
+              alt={title}
+            />
           )}
         </div>
       ))}

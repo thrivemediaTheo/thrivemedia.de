@@ -1,6 +1,5 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 import react from "@astrojs/react";
@@ -21,9 +20,6 @@ export default defineConfig({
   site,
   integrations: [
     tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
     sitemap({
       changefreq: "monthly",
       lastmod: new Date(),
@@ -37,4 +33,10 @@ export default defineConfig({
     prefetch(),
     react(),
   ],
+  experimental: {
+    assets: true,
+  },
+  image: {
+    service: sharpImageService(),
+  },
 });

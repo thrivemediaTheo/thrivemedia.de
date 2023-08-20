@@ -1,12 +1,12 @@
 ---
-import { Image } from "@astrojs/image/components";
-import thriveLogo from "../assets/images/thrive-logo.webp";
+import { Image } from "astro:assets";
+import thriveLogo from "../assets/images/thrive-logo.png";
 ---
 
 <Image
   src={thriveLogo}
   alt="Thrive Media Solutions"
   title="Thrive Media Solutions Logo"
-  height={48}
-  width={132}
+  height={thriveLogo.height}
+  width={thriveLogo.width}
 />

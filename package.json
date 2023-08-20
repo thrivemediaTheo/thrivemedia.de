@@ -11,7 +11,6 @@
     "lighthouse": "unlighthouse"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.3",
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/react": "^2.2.1",
     "@astrojs/sitemap": "^2.0.1",
