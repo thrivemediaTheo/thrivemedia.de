@@ -2,10 +2,11 @@
 import { Icon } from "astro-icon";
 import PrimaryButton from "./PrimaryButton.astro";
 import ThriveLogo from "./ThriveLogo.astro";
+import MobileNav from "./MobileNav";
 ---
 
 <header
-  class="w-full bg-background fixed top-0 left-0 right-0 z-50 shadow-header transition-all duration-500 ease-in px-4 font-nav"
+  class="w-full bg-background sticky top-0 left-0 right-0 z-50 shadow-header transition-all duration-500 ease-in px-4 font-nav"
 >
   <div
     class="grid grid-cols-3 items-center mx-auto relative py-4 max-w-screen-2xl"
@@ -82,6 +83,8 @@ import ThriveLogo from "./ThriveLogo.astro";
         </a>
       </li>
     </ul>
+    <div class="md:hidden col-span-2 place-self-end flex items-center">
+      <MobileNav client:media="(max-width: 768px)" />
+    </div>
   </div>
 </header>
-<div class="h-20"></div>
