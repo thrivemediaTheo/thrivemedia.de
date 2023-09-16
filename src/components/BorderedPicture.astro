@@ -4,10 +4,10 @@ const { dir, src, title, alt, widths, sizes, width, height } = Astro.props;
 ---
 
 <!-- TODO: on hover border genau um image -->
-<div class="relative h-full w-full group">
+<div class="relative h-full w-full">
   <div
     class:list={{
-      "border-2 border-primary border-solid absolute h-full w-full rounded-xl transition-all duration-300 ease-out group-hover:scale-110 group-hover:-top-1 group-hover:-left-1 group-hover:m-1.5": true,
+      "border-2 border-primary border-solid absolute h-full w-full rounded-xl transition-all duration-300 ease-out": true,
       "-top-3 -left-3": dir === "tl",
       "top-3 left-3": dir === "br",
     }}
