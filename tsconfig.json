@@ -6,5 +6,6 @@
       "vidstack/globals"
     ],
     "jsxImportSource": "react"
-  }
+  },
+  "exclude": ["tailwind.config.ts"]
 }
