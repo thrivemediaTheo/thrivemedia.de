@@ -19,6 +19,7 @@
     "@types/react-dom": "^18.0.6",
     "@vidstack/react": "^0.6.13",
     "astro": "^2.10.4",
+    "embla-carousel-react": "8.0.0-rc12",
     "keen-slider": "^6.8.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -26,11 +27,7 @@
     "tailwindcss": "^3.0.24",
     "vidstack": "^0.6.13"
   },
-  "pnpm": {
-    "patchedDependencies": {
-      "keen-slider@6.8.6": "patches/keen-slider@6.8.6.patch"
-    }
-  },
+  "pnpm": {},
   "devDependencies": {
     "@iconify/react": "^4.1.1",
     "astro-icon": "^0.8.1",

@@ -1,6 +1,9 @@
 ---
 import Heading from "./Heading.astro";
 import Gallery from "./Gallery";
+import MobileGallery from "./MobileGallery";
+
+import { videos } from "../lib/gallery";
 ---
 
 <section class="text-center pt-12" id="prevwork">
@@ -8,9 +11,13 @@ import Gallery from "./Gallery";
     <span slot="subtitle">Portfolio</span>
     Previous <span class="text-primary">Work</span>
   </Heading>
-  <div class="pt-12"></div>
   <div class="h-[35vmin] relative">
-    <Gallery client:only />
+    <div class="hidden lg:block">
+      <Gallery videos={videos} client:media="(min-width: 1024px)" client:only />
+    </div>
+    <div class="bg-red-500 flex lg:hidden">
+      <MobileGallery videos={videos} client:only="(max-width: 1024px)" />
+    </div>
     <div
       class="absolute top-[60%] left-[65%] -translate-x-1/2 -translate-y-1/2 bg-primary blur-[250px] h-[250px] aspect-square rounded-full -z-10"
     >
