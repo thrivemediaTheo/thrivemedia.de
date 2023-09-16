@@ -11,11 +11,11 @@ import { videos } from "../lib/gallery";
     <span slot="subtitle">Portfolio</span>
     Previous <span class="text-primary">Work</span>
   </Heading>
-  <div class="h-[60vh] relative">
+  <div class="lg:h-[60vh] relative">
     <div class="hidden lg:block">
       <Gallery videos={videos} client:media="(min-width: 1024px)" client:only />
     </div>
-    <div class="bg-red-500 flex lg:hidden">
+    <div class="flex lg:hidden">
       <MobileGallery videos={videos} client:only="(max-width: 1024px)" />
     </div>
     <div
