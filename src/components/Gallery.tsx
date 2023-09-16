@@ -1,48 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import VideoPlayer from "./VideoPlayer";
+import { Video } from "../lib/gallery";
 
-import hermsCharityRunThumb from "../assets/images/thumbnails/HermesThumb.png";
-import piesbergThumb from "../assets/images/thumbnails/PiesbergThumb.webp";
-import thomasHenryThumb from "../assets/images/thumbnails/ThomasHenryThumb.png";
-import tuerkueBarThumb from "../assets/images/thumbnails/TuerkueBarThumb.png";
+interface Props {
+  videos: Video[];
+}
 
-const flexAspectRatio = {
-  [16 / 9]: 12.75,
-  [9 / 16]: 2,
-};
-
-const videos = [
-  {
-    title: "Hermes Charity Run",
-    src: "https://content.thrivemedia.art/HermesCharityRun_DEMO.mp4",
-    thumbnail: hermsCharityRunThumb,
-    aspectRatio: 16 / 9,
-    muted: false,
-  },
-  {
-    title: "Bikepark Piesberg",
-    src: "https://content.thrivemedia.art/Piesberg_DEMO.mp4",
-    thumbnail: piesbergThumb,
-    aspectRatio: 16 / 9,
-    muted: false,
-  },
-  {
-    title: "Thomas Henry Reel",
-    src: "https://content.thrivemedia.art/ThomasHenry_DEMO.mp4",
-    thumbnail: thomasHenryThumb,
-    aspectRatio: 9 / 16,
-    muted: false,
-  },
-  {
-    title: "Türkü Bar",
-    src: "https://content.thrivemedia.art/TuerkueBarNoSoundDEMO.mp4",
-    thumbnail: tuerkueBarThumb,
-    aspectRatio: 16 / 9,
-    muted: true,
-  },
-];
-
-export default function Gallery(props) {
+export default function Gallery({ videos }: Props) {
   const [hovering, setHovering] = useState(-1);
   const [playerShowing, setPlayerShowing] = useState(-1);
   let playing = false;

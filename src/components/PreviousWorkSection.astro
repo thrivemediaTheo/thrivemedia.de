@@ -1,6 +1,8 @@
 ---
 import Heading from "./Heading.astro";
 import Gallery from "./Gallery";
+
+import { videos } from "../lib/gallery";
 ---
 
 <section class="text-center pt-12" id="prevwork">
@@ -10,7 +12,7 @@ import Gallery from "./Gallery";
   </Heading>
   <div class="pt-12"></div>
   <div class="h-[35vmin] relative">
-    <Gallery client:only />
+    <Gallery client:only videos={videos} />
     <div
       class="absolute top-[60%] left-[65%] -translate-x-1/2 -translate-y-1/2 bg-primary blur-[250px] h-[250px] aspect-square rounded-full -z-10"
     >
