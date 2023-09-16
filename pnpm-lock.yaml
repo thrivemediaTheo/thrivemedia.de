@@ -1,9 +1,8 @@
 lockfileVersion: '6.0'
 
-patchedDependencies:
-  keen-slider@6.8.6:
-    hash: qw37axijg24qa77ykrzpiydkye
-    path: patches/keen-slider@6.8.6.patch
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 dependencies:
   '@astrojs/prefetch':
@@ -30,9 +29,6 @@ dependencies:
   astro:
     specifier: ^2.10.4
     version: 2.10.4(sharp@0.32.4)
-  keen-slider:
-    specifier: ^6.8.6
-    version: 6.8.6(patch_hash=qw37axijg24qa77ykrzpiydkye)
   react:
     specifier: ^18.0.0
     version: 18.2.0
@@ -3469,11 +3465,6 @@ packages:
     optionalDependencies:
       graceful-fs: 4.2.11
     dev: true
-
-  /keen-slider@6.8.6(patch_hash=qw37axijg24qa77ykrzpiydkye):
-    resolution: {integrity: sha512-dcEQ7GDBpCjUQA8XZeWh3oBBLLmyn8aoeIQFGL/NTVkoEOsmlnXqA4QykUm/SncolAZYGsEk/PfUhLZ7mwMM2w==}
-    dev: false
-    patched: true
 
   /keyv@4.5.3:
     resolution: {integrity: sha512-QCiSav9WaX1PgETJ+SpNnx2PRRapJ/oRSXM4VO5OGYGSjrxbKPVFVhB3l2OCbLCk329N8qyAtsJjSjvVBWzEug==}
