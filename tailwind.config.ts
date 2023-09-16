@@ -1,4 +1,5 @@
 import { Config } from "tailwindcss";
+import { aspectRatio } from "./plugins/tailwind/aspectRatio";
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -20,5 +21,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [aspectRatio],
 } satisfies Config;
