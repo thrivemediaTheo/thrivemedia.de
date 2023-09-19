@@ -33,9 +33,6 @@ export default defineConfig({
     prefetch(),
     react(),
   ],
-  experimental: {
-    assets: true,
-  },
   image: {
     service: sharpImageService(),
   },
