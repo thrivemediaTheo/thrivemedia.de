@@ -13,10 +13,10 @@ import { videos } from "../lib/gallery";
   </Heading>
   <div class="lg:h-[60vh] relative">
     <div class="hidden lg:block">
-      <Gallery videos={videos} client:media="(min-width: 1024px)" client:only />
+      <Gallery videos={videos} client:media="(min-width: 1024px)" />
     </div>
     <div class="flex lg:hidden">
-      <MobileGallery videos={videos} client:only="(max-width: 1024px)" />
+      <MobileGallery videos={videos} client:media="(max-width: 1024px)" />
     </div>
     <div
       class="absolute top-[60%] left-[65%] -translate-x-1/2 -translate-y-1/2 bg-primary blur-[250px] h-[250px] aspect-square rounded-full -z-10"

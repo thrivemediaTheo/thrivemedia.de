@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import VideoPlayer from "./VideoPlayer";
-import { Video } from "../lib/gallery";
+import type { Video } from "../lib/gallery";
 
 interface Props {
   videos: Video[];

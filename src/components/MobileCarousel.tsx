@@ -1,5 +1,5 @@
-import '../assets/css/embla.css';
-import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
+import "../assets/css/embla.css";
+import useEmblaCarousel, { type EmblaOptionsType } from "embla-carousel-react";
 
 type Props = {
   children: JSX.Element[];
