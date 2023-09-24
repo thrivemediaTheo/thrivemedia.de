@@ -126,7 +126,7 @@ export default function Gallery({ videos }: Props) {
 
   return (
     <div
-      className="flex flex-row items-center justify-center gap-2 h-[60vh]"
+      className="flex flex-row items-center justify-center gap-2 lg:h-[60vh] lg:max-h-[600px]"
       ref={gallery}
     >
       {videos.map(({ thumbnail, src, title, aspectRatio, muted }, i) => (

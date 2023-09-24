@@ -11,7 +11,7 @@ import { videos } from "../lib/gallery";
     <span slot="subtitle">Portfolio</span>
     Previous <span class="text-primary">Work</span>
   </Heading>
-  <div class="lg:h-[60vh] relative">
+  <div class="lg:h-[60vh] max-h-[600px] relative">
     <div class="hidden lg:block">
       <Gallery videos={videos} client:media="(min-width: 1024px)" />
     </div>
