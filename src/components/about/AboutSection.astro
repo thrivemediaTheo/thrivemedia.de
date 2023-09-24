@@ -1,0 +1,35 @@
+---
+import Heading from "../Heading.astro";
+import PrimaryButton from "../PrimaryButton.astro";
+import AboutImages from "./AboutImages.astro";
+---
+
+<section id="about" class="text-center pt-12">
+  <Heading>
+    <span slot="subtitle">About</span>
+     Meet our <span class="text-primary">team</span>
+  </Heading>
+
+  <div
+    class="grid grid-cols-1 justify-center lg:grid-cols-2 gap-x-8 pt-8 lg:pt-12"
+  >
+    <article class="text-left">
+      <h3 class="font-header text-2xl lg:text-5xl text-text mb-5 leading-snug">
+        Helping businesses succeed through the power of media.
+      </h3>
+      <p class="text-base lg:text-[22px] text-text/80 leading-normal mb-11">
+        Als junges Unternehmen bringen wir frische Perspektiven und zeitgemäßes
+        Denken in die Welt der visuellen Gestaltung ein. Unser Schwerpunkt auf
+        digitalen Inhalten ermöglicht es uns, Ihren Service dem aktuellen
+        Zeitgeist entsprechend erfolgreich zu vermarkten.
+      </p>
+      <PrimaryButton
+        href="mailto:theo@thrivemedia.art"
+        title="Send a Free Request"
+      >
+        Send a Free Request
+      </PrimaryButton>
+    </article>
+  </div>
+  <AboutImages />
+</section>

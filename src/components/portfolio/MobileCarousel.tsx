@@ -1,4 +1,4 @@
-import "../assets/css/embla.css";
+import "../../assets/css/embla.css";
 import useEmblaCarousel, { type EmblaOptionsType } from "embla-carousel-react";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function MobileCarousel({ children: slides, options }: Props) {
-  const [emblaRef] = useEmblaCarousel(options);
+  const [emblaRef, api] = useEmblaCarousel(options, []);
 
   return (
     <div className="embla">
