@@ -2,6 +2,7 @@ import hermsCharityRunThumb from "../assets/images/thumbnails/HermesThumb.png";
 import piesbergThumb from "../assets/images/thumbnails/PiesbergThumb.webp";
 import thomasHenryThumb from "../assets/images/thumbnails/ThomasHenryThumb.png";
 import tuerkueBarThumb from "../assets/images/thumbnails/TuerkueBarThumb.png";
+import goeckemeyerThumb from "../assets/images/thumbnails/GoeckemeyerThumb.webp";
 
 export interface Video {
   title: string;
@@ -33,11 +34,18 @@ export const videos: Video[] = [
     aspectRatio: 9 / 16,
     muted: false,
   },
-  {
+  /*{
     title: "Türkü Bar",
     src: "https://content.thrivemedia.art/TuerkueBarNoSoundDEMO.mp4",
     thumbnail: tuerkueBarThumb,
     aspectRatio: 16 / 9,
     muted: true,
-  },
+  },*/
+  {
+    title: "Göckemeyer Metallbau Reel",
+    src: "https://content.thrivemedia.art/GoeckemeyerMetallbau_Reel.mp4",
+    thumbnail: goeckemeyerThumb,
+    aspectRatio: 9 / 16,
+    muted: false,
+  }
 ];
