@@ -1,6 +1,7 @@
 ---
 import Heading from "../Heading.astro";
 import ServiceGrid from "./ServiceGrid.astro";
+import PrimaryButton from "../PrimaryButton.astro";
 ---
 
 <section id="services" class="text-center flex flex-col space-y-12 pt-12">
@@ -9,5 +10,26 @@ import ServiceGrid from "./ServiceGrid.astro";
     What we <span class="text-primary">provide</span>
   </Heading>
 
+  <div> <!// Medien soll in Gelb gehighlightet werden -->
+    <h1 class="text-text text-center " >
+      Wir helfen eurem Unternehmen durch die Stärke moderner Medien.
+    </h1>
+  </div>
+
   <ServiceGrid />
+
+  <div> <!// Button muss noch sinnvoll formatiert werden -->
+    <h1 class="text-text text-left ml-60" >
+      Teilt uns ganz unverbindlich eure Ideen mit. Eure Wünsche
+      <p>  stehen im Mittelpunkt unseres Engagements.</p>
+    </h1>
+    <PrimaryButton
+    href="#contact"
+    title="Send a Free Request"
+  >
+    Send a Free Request
+  </PrimaryButton>
+  </div>
+
+ 
 </section>

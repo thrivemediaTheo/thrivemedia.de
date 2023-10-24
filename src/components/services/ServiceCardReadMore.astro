@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon";
+import { render } from "react-dom";
+const { title, description, icon, pos, border } = Astro.props;
+
+let showMore = false;
+
+function toggleReadMore() {
+  showMore = !showMore;
+  render
+}
+export function useEffect() {
+  toggleReadMore();
+}
+---
+
+<div> <!// ReadMore funktioniert nicht kp lmao -->
+  <div 
+  class="bg-secondary rounded-xl text-left px-8 py-6 relative hover:scale-105 hover:drop-shadow-xl transition-all duration-500"
+  class:list={{
+    "": pos === "top",
+    "lg:mt-16": pos === "mid",
+    "lg:mt-32": pos === "bot",
+    "border-primary border-solid": border,
+    "border-t-4": border === "top",
+    "border-b-4": border === "bot",
+  }}
+>
+  <Icon name={icon} class="text-primary aspect-square h-24 mx-auto my-12" />
+  <h3 class="text-text text-lg font-header mb-2 text-center tracking-wide">
+    {title}
+  </h3>
+  <p class="text-text/80 text-base font-body"> <!// 250 ist die Anzahl der Zeichen, die gezeigt werden dürfen, damit es mit dem ReadMore ungefähr dieselbe Länge wie die anderen Texte hat -->
+    {showMore ? description : description.slice(0, 250)}
+    {!showMore && description.length > 250&& (
+      <a href="javascript:void(1)" 
+      on-click = {toggleReadMore}
+      class="text-primary font-body underline" >
+    Read More
+      </a>
+    )}
+  </p>
+  {showMore && description.length > 250 && (
+    <p class="text-text/80 text-base font-body">{description.slice(250)}</p>
+  )}
+</div>
+</div>
