@@ -10,11 +10,13 @@ import PrimaryButton from "../PrimaryButton.astro";
     What we <span class="text-primary">provide</span>
   </Heading>
 
-  <div> <!// Medien soll in Gelb gehighlightet werden -->
-    <h1 class="text-text text-center " >
-      Wir helfen eurem Unternehmen durch die Stärke moderner Medien.
-    </h1>
+  <div class="text-text flex flex-col" >
+   <!// Kp warum die Border so weit rechts ist; ausserdem soll die animation erst starten, wenn man zu der section scrollt -->
+    <p class="typewriter container w-200">Wir helfen eurem Unternehmen durch die Stärke moderner <span class="text-primary"> Medien.</span></p>
+    
   </div>
+
+ 
 
   <ServiceGrid />
 

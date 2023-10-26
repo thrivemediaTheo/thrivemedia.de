@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import movingTrain from "../assets/images/train-movin-header.webp";
+
+import  "../assets/css/typewriter.css";
 ---
 
 <section class="relative">
@@ -23,16 +25,16 @@ import movingTrain from "../assets/images/train-movin-header.webp";
     loading="eager"
     width={movingTrain.width}
     height={movingTrain.height}
-    class="h-44 object-cover lg:h-auto"
+    class="h-44 object-cover lg:h-auto "
   />
-
-  <div> <!// Headline und Subheadline werden davon runter gezogen bzw. beeinflusst -->
-    <h1 class="text-text text-center pt-12" >
-      Eure Visionen, unsere Kunst: Wir hauchen euren Idee Leben ein und halten die besten Momente für euch auf Kamera fest.
-      <p>
-      Von Events bis hin zu Marketingvideos - unsere Arbeit macht unvergesslich!
-      </p>
-    </h1>
-  </div>
-
 </section>
+
+
+ <div class=""> <!// muss noch positioniert werden; die Animation soll  nicht gleichzeitig starten und nur bei der zweiten Zeile enden  -->
+    <p class="text-text text-center typewriter" > 
+     Eure Visionen, unsere Kunst: Wir hauchen euren Idee Leben ein und halten die besten Momente für euch auf Kamera fest.
+    </p>
+    <p class="text-text text-center typewriter">
+      Von Events bis hin zu Marketingvideos - unsere Arbeit macht unvergesslich! 
+    </p>
+ </div>

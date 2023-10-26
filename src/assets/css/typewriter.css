@@ -1,0 +1,24 @@
+.typewriter {
+
+    overflow: hidden; /* Stellt sicher, dass der Text nicht sofort vollständig sichtbar ist */
+    border-right: .15em solid rgb(255, 213, 0); /* Blinkender Cursor */
+    white-space: nowrap; /* Verhindert Zeilenumbrüche */
+    margin: 0 auto; /* Zentriert den Text im Container */
+     /* letter-spacing: .15em;Abstand zwischen den Buchstaben */
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .4s step-end infinite; /* Blinkender Cursor */
+}
+.container{
+    display: inline-block;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(255, 213, 0) }
+}
