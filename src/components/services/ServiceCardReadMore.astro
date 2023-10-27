@@ -7,7 +7,7 @@ let showMore = false;
 
 function toggleReadMore() {
   showMore = !showMore;
-  render
+  render;
 }
 export function useEffect() {
   toggleReadMore();
@@ -30,9 +30,9 @@ export function useEffect() {
   <h3 class="text-text text-lg font-header mb-2 text-center tracking-wide">
     {title}
   </h3>
-  <p class="text-text/80 text-base font-body"> <!// 250 ist die Anzahl der Zeichen, die gezeigt werden dürfen, damit es mit dem ReadMore ungefähr dieselbe Länge wie die anderen Texte hat -->
-    {showMore ? description : description.slice(0, 250)}
-    {!showMore && description.length > 250&& (
+  <p class="text-text/80 text-base font-body"> <!// 249 ist die Anzahl der Zeichen, die gezeigt werden dürfen, damit es mit dem ReadMore ungefähr dieselbe Länge wie die anderen Texte hat -->
+    {showMore ? description : description.slice(0, 249)}
+    {!showMore && description.length > 249&& (
       <a href="javascript:void(1)" 
       on-click = {toggleReadMore}
       class="text-primary font-body underline" >
@@ -40,7 +40,7 @@ export function useEffect() {
       </a>
     )}
   </p>
-  {showMore && description.length > 250 && (
+  {showMore && description.length > 249 && (
     <p class="text-text/80 text-base font-body">{description.slice(250)}</p>
   )}
 </div>
