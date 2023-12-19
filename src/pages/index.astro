@@ -5,6 +5,109 @@ import PreviousWork from "../components/portfolio/PreviousWorkSection.astro";
 import Services from "../components/services/ServicesSection.astro";
 import About from "../components/about/AboutSection.astro";
 import Contact from "../components/contact/ContactSection.astro";
+import Schema from "../components/Schema.astro";
+import type {
+  LocalBusiness,
+  Organization,
+  Person,
+  ContactPoint,
+  WebPage,
+  WebSite,
+  CollectionPage,
+  MediaGallery,
+  VideoGallery,
+} from "schema-dts";
+
+const email = "theo@thrivemedia.art";
+const telephone = "+4915735980000";
+
+const contactPoint: ContactPoint = {
+  "@type": "ContactPoint",
+  telephone,
+  email,
+};
+
+const founder: Person = {
+  "@type": "Person",
+  name: "Theo Schneidereit",
+  disambiguatingDescription: "German Video Producer",
+  birthDate: "2005-03-07",
+  affiliation: "Thrive Media Solutions",
+  email,
+  contactPoint,
+  gender: "male",
+};
+
+const org: Organization = {
+  "@type": "ProfessionalService",
+  name: "Thrive Media Solutions",
+  url: "https://thrivemedia.art",
+  logo: "https://thrivemedia.art/logo.png",
+  contactPoint,
+  email,
+  telephone,
+  description:
+    "Thrive Media Solutions is a video production company based in Osnabrück, Germany. We produce videos for businesses and individuals.",
+  founder,
+  openingHours: "Mo,Tu,We,Th,Fr 09:00-17:00",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Osnabrück",
+    addressRegion: "Niedersachsen",
+    postalCode: "49078",
+  },
+};
+
+const webPage: WebPage = {
+  "@type": "WebPage",
+  url: "https://thrivemedia.art",
+  mainContentOfPage: {
+    "@type": "WebPageElement",
+    cssSelector: ".body-content",
+  },
+  sourceOrganization: org,
+};
+
+const webSite: WebSite = {
+  "@type": "WebSite",
+  additionalType: ["CreativeWork"],
+  url: "https://thrivemedia.art",
+  name: "Thrive Media Solutions",
+  headline: "We make art",
+  inLanguage: "de-DE",
+  description:
+    "Thrive Media Solutions is a video production company based in Osnabrück, Germany. We produce videos for businesses and individuals.",
+  sourceOrganization: org,
+  mainEntity: org,
+  keywords: [
+    "Social Networking",
+    "Social Media",
+    "News",
+    "Web",
+    "Technology",
+    "Web 2.0",
+    "Tech",
+    "Information",
+    "Blog",
+    "Facebook",
+    "YouTube",
+    "Google",
+    "Top",
+  ],
+};
+
+const videoGallery: VideoGallery = {
+  "@type": "VideoGallery",
+  creator: founder,
+  name: "Thrive Media Solutions Portfolio",
+  video: [
+    {
+      "@type": "Clip",
+      name: "Goeckemeyer Metallbau Clip",
+      url: "",
+    },
+  ],
+};
 ---
 
 <DefaultLayout title="Thrive Media Solutions | Videoproduktion | Osnabrück">
@@ -14,3 +117,6 @@ import Contact from "../components/contact/ContactSection.astro";
   <About />
   <Contact />
 </DefaultLayout>
+
+<Schema data={org} />
+<Schema data={[webPage, webSite]} />
