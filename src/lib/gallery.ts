@@ -3,6 +3,7 @@ import piesbergThumb from "../assets/images/thumbnails/PiesbergThumb.webp";
 import thomasHenryThumb from "../assets/images/thumbnails/ThomasHenryThumb.png";
 import tuerkueBarThumb from "../assets/images/thumbnails/TuerkueBarThumb.png";
 import goeckemeyerThumb from "../assets/images/thumbnails/GoeckemeyerThumb.webp";
+import goeckemeyerThumb2 from "../assets/images/thumbnails/GoeckemeyerThumb3.jpg";
 
 export interface Video {
   title: string;
@@ -20,11 +21,18 @@ export const videos: Video[] = [
     aspectRatio: 16 / 9,
     muted: false,
   },
-  {
+  /*{
     title: "Bikepark Piesberg",
     src: "https://content.thrivemedia.art/Piesberg_DEMO.mp4",
     thumbnail: piesbergThumb,
     aspectRatio: 16 / 9,
+    muted: false,
+  },*/
+  {
+    title: "Göckemeyer Metallbau Reel2",
+    src: "https://content.thrivemedia.art/GoeckemeyerMetallbau_Reel2.mp4",
+    thumbnail: goeckemeyerThumb2,
+    aspectRatio: 9 / 16,
     muted: false,
   },
   {
@@ -47,5 +55,5 @@ export const videos: Video[] = [
     thumbnail: goeckemeyerThumb,
     aspectRatio: 9 / 16,
     muted: false,
-  }
+  },
 ];
